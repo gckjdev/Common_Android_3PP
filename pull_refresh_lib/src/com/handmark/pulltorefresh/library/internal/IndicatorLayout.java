@@ -35,19 +35,19 @@ public class IndicatorLayout extends FrameLayout implements AnimationListener {
 	static final int DEFAULT_ROTATION_ANIMATION_DURATION = 150;
 
 	private Animation mInAnim, mOutAnim;
-	private ImageView mArrowImageView;
+	//private ImageView mArrowImageView;
 
 	private final Animation mRotateAnimation, mResetRotateAnimation;
 
 	public IndicatorLayout(Context context, PullToRefreshBase.Mode mode) {
 		super(context);
 
-		mArrowImageView = new ImageView(context);
+		//mArrowImageView = new ImageView(context);
 		FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT,
 				FrameLayout.LayoutParams.WRAP_CONTENT, Gravity.CENTER);
 		lp.topMargin = lp.bottomMargin = lp.leftMargin = lp.rightMargin = getResources().getDimensionPixelSize(
 				R.dimen.indicator_internal_padding);
-		addView(mArrowImageView, lp);
+		//addView(mArrowImageView, lp);
 
 		int inAnimResId, outAnimResId;
 		switch (mode) {
@@ -55,14 +55,14 @@ public class IndicatorLayout extends FrameLayout implements AnimationListener {
 				inAnimResId = R.anim.slide_in_from_bottom;
 				outAnimResId = R.anim.slide_out_to_bottom;
 				setBackgroundResource(R.drawable.indicator_bg_bottom);
-				mArrowImageView.setImageResource(R.drawable.arrow_up);
+				//mArrowImageView.setImageResource(R.drawable.arrow_up);
 				break;
 			default:
 			case PULL_DOWN_TO_REFRESH:
 				inAnimResId = R.anim.slide_in_from_top;
 				outAnimResId = R.anim.slide_out_to_top;
 				setBackgroundResource(R.drawable.indicator_bg_top);
-				mArrowImageView.setImageResource(R.drawable.arrow_down);
+				//mArrowImageView.setImageResource(R.drawable.arrow_down);
 				break;
 		}
 
@@ -107,7 +107,7 @@ public class IndicatorLayout extends FrameLayout implements AnimationListener {
 	@Override
 	public void onAnimationEnd(Animation animation) {
 		if (animation == mOutAnim) {
-			mArrowImageView.clearAnimation();
+			//mArrowImageView.clearAnimation();
 			setVisibility(View.GONE);
 		} else if (animation == mInAnim) {
 			setVisibility(View.VISIBLE);
@@ -127,11 +127,11 @@ public class IndicatorLayout extends FrameLayout implements AnimationListener {
 	}
 
 	public void releaseToRefresh() {
-		mArrowImageView.startAnimation(mRotateAnimation);
+		//mArrowImageView.startAnimation(mRotateAnimation);
 	}
 
 	public void pullToRefresh() {
-		mArrowImageView.startAnimation(mResetRotateAnimation);
+		//mArrowImageView.startAnimation(mResetRotateAnimation);
 	}
 
 }

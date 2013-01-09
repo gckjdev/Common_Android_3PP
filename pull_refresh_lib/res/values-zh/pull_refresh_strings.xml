@@ -3,4 +3,6 @@
   <string name="pull_to_refresh_pull_label">下拉刷新&#8230;</string>
   <string name="pull_to_refresh_release_label">松手刷新&#8230;</string>
   <string name="pull_to_refresh_refreshing_label">载入中&#8230;</string>
+  <string name="pull_to_refresh_pull_down_label">更多&#8230;</string>
+  <string name="pull_to_refresh_pull_down_release_label">更多&#8230;</string>
 </resources>
